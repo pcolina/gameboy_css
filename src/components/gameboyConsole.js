@@ -40,7 +40,7 @@ class GameboyConsole extends HTMLElement {
     this.shadowRoot.innerHTML = /* html */`
     <style>${GameboyConsole.styles}</style>
     <div class="container">
-     
+     ree
     </div>`;
   }
 }
