@@ -7,19 +7,28 @@ class GameboyTop extends HTMLElement {
    static get styles() {
        return /* css */`
           :host {
-
+            --height: 26px;
            }
 
            .container{
              display: flex; 
              padding-bottom: 5px;
              margin-bottom: 5px;
-             border-bottom: 1px solid #0001; 
+             border-bottom: 2px solid #fffa;  
+             height: var(--height); 
+             overflow:hidden; 
+             border-radius: 12px 12px 0 0;
+             box-shadow: 0px 18px 5px -10px #fff inset;
+            }
+
+            .container > div {
+              border-radius: 0 0 2px 2px;
+              border: 1px solid #1111;
+              box-shadow: 0 2px 2px #2F2725aa;
             }
 
             .corner {
               width: 25px;
-              height: 20px; 
             }
 
             .corner.right {
@@ -33,50 +42,31 @@ class GameboyTop extends HTMLElement {
              width:100%;
             }
 
+            .middle span{
+             display: inline-block; 
+             font-family:Arial, sans-serif;
+             font-size: 12px;
+             color: white;
+             text-shadow: 1px 2px 2px #0006; 
+             border-radius: 15px;
+             padding: 1px 4px;
+             transform: translate(6px, 1px); 
+             margin-top: 0;
+             box-shadow: 0px 1px 1px   #0005 inset,
+               0px -1px 2px   #fffc inset;
+             opacity: 0.8;
+            }
+
             .corner,
             .middle{
                 border-radius: 0 0 2px 2px;
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+                border: 1px solid rgba(0, 0, 0, 0.1); 
                 
             }
 
-        //    .gbtop {
-        //     display: flex;
-        //     padding-bottom: 5px;
-        //     margin-bottom: 5px;
-        //     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        //     & .corner {
-        //       width: 25px;
-        //       height: 20px;
-        //     }
-        //     & .corner.left {
-        //       margin-right: 5px;
-        //     }
-        //     & .corner.right {
-        //       margin-left: 5px;
-        //     }
-        //     & .top {
-        //       width: 100%;
-        //       & span {
-        //         font-family: Arial, sans-serif;
-        //         font-size: 12px;
-        //         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5) inset;
-        //         text-shadow: 2px 1px 2px rgba(0, 0, 0, 1);
-        //         color: #eee;
-        //         border-radius: 15px;
-        //         margin: 0 6px;
-        //         padding: 2px 5px;
-        //         opacity: 0.25;
-        //       }
-        //     }
-        //     & .left,
-        //     & .top,
-        //     & .right {
-        //       border-radius: 0 0 2px 2px;
-        //       border: 1px solid rgba(0, 0, 0, 0.1);
-        //       box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
-        //     }
+           
+
+       
            
            `;
   }

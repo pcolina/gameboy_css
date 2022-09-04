@@ -1,4 +1,5 @@
 import "./GameboyTop.js";
+import "./GameboyCrystal.js";
 class GameboyConsole extends HTMLElement {
   constructor() {
     super();
@@ -26,11 +27,41 @@ class GameboyConsole extends HTMLElement {
 
         display:flex;
         flex-direction: column;
-        justify-content: space-between;
-        
-          
+        justify-content: space-between; 
       }
     
+      .screen-container{
+        height: 325px;
+        top: 0px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 25px;
+      }
+
+      .controls-container{
+        height:275px; 
+      }
+
+      .brand{
+        color: #302058;
+      }
+
+      .brand .company{
+        font-family: "Pretendo";
+        font-size: 14px;
+      }
+      .brand .product{
+        font-family: "Lato";
+        font-size: 22px;
+        font-weight:bold;
+        font-style: italic;
+      }
+      
+      .brand .tm{
+        font-size: 8px;
+      }
     `;
   }
 
@@ -43,8 +74,16 @@ class GameboyConsole extends HTMLElement {
     <style>${GameboyConsole.styles}</style>
     <div class="container">
       <gameboy-top></gameboy-top>
-      <div>screen</div>
-      <div>controls</div>
+      <div class="screen-container">
+        <gameboy-crystal></gameboy-crystal>
+          <div class="brand">
+            <span class="company">Nintendo</span>
+            <span class="product">GAME BOY</span>
+            <sub class="tm">TM</sub>
+          </div>
+      </div>
+      <div class="controls-container">
+      </div>
 
     </div>`;
   }
